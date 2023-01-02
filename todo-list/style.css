@@ -1,0 +1,64 @@
+:root {
+  /* https://colorhunt.co/palette/eb455ffcffe7bad7e92b3467 */
+  --clr-primary: #8498a5;
+  --clr-light: #fcffe7;
+  --clr-dark: #2b3467;
+  --clr-warning: #eb455f;
+}
+
+*,
+*::before,
+*::after {
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: serif;
+  font-weight: 300;
+  font-size: 1.5rem;
+  background-color: var(--clr-primary);
+  color: var(--clr-light);
+}
+
+.container {
+  max-width: 960px;
+  margin-inline: 10vh;
+  /* FIXME: */
+  outline: 1px solid black;
+}
+
+.list-container {
+  /* FIXME: */
+  outline: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 10vw;
+  height: 80vh;
+}
+
+.title {
+  text-align: center;
+  font-size: 4rem;
+  letter-spacing: 0.3rem;
+  margin-top: 0;
+}
+
+.list-style {
+  /* FIXME: */
+  outline: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.all-tasks {
+}
+
+.all-tasks li {
+  list-style: none;
+}
+
+.todo-list {
+}

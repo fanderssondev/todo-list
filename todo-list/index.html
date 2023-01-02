@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Todo list</title>
   </head>
   <body>
@@ -11,85 +12,88 @@
     <main>
       <div class="container">
         <h1 class="title">Todo list</h1>
+        <div class="list-container">
+          <!-- My lists -->
+          <div class="all-tasks list-style">
+            <h2 class="task-list-title">My lists</h2>
+            <ul class="task-list">
+              <li class="list-name active-list">My list 1</li>
+              <li class="list-name">My list 2</li>
+              <li class="list-name">My list 3</li>
+            </ul>
 
-        <!-- My lists -->
-        <div class="all-lists">
-          <h2 class="task-list-title">My lists</h2>
-          <ul class="task-list">
-            <li class="list-name active-list">My list 1</li>
-            <li class="list-name">My list 2</li>
-            <li class="list-name">My list 3</li>
-          </ul>
-
-          <!-- Add a new list -->
-          <form action="">
-            <input
-              type="text"
-              class="new list"
-              placeholder="new list name"
-              aria-label="new list name"
-            />
-            <button class="btn list" aria-label="create new list">+</button>
-          </form>
-        </div>
-
-        <!-- Todo list -------------------------------------------------------------->
-
-        <!-- Todo list header -->
-        <div class="todo-list">
-          <div class="todo-header">
-            <h2 class="list-title">My list 1</h2>
-            <p class="task-count">3 tasks remaining</p>
+            <!-- Add a new list -->
+            <form action="">
+              <input
+                type="text"
+                class="new list"
+                placeholder="new list name"
+                aria-label="new list name"
+              />
+              <button class="btn list" aria-label="create new list">+</button>
+            </form>
           </div>
 
-          <!-- Todo list body -->
-          <div class="todo-body">
-            <!-- Task 1 -->
-            <div class="tasks">
-              <div class="task">
-                <input type="checkbox" id="task-1" />
-                <label for="task-1">
-                  <span class="custom-checkbox"></span>
-                  One thing todo
-                </label>
-              </div>
-            </div>
-            <!-- Task 2 -->
-            <div class="tasks">
-              <div class="task">
-                <input type="checkbox" id="task-2" />
-                <label for="task-2">
-                  <span class="custom-checkbox"></span>
-                  Another thing todo
-                </label>
-              </div>
-            </div>
-            <!-- Task-3 -->
-            <div class="tasks">
-              <div class="task">
-                <input type="checkbox" id="task-3" />
-                <label for="task-3">
-                  <span class="custom-checkbox"></span>
-                  A third thing todo
-                </label>
-              </div>
+          <!-- Todo list -------------------------------------------------------------->
+
+          <!-- Todo list header -->
+          <div class="todo-list list-style">
+            <div class="todo-header">
+              <h2 class="list-title">My list 1</h2>
+              <p class="task-count">3 tasks remaining</p>
             </div>
 
-            <!-- Add a new task -->
-            <div class="new-task-creator">
-              <form action="">
-                <input
-                  type="text"
-                  class="new list"
-                  placeholder="new task name"
-                  aria-label="new task name"
-                />
-                <button class="btn task" aria-label="create new task">+</button>
-              </form>
-            </div>
-            <div class="delete-stuff">
-              <button class="btn delete">Clear completed tasks</button>
-              <button class="btn delete">Delete list</button>
+            <!-- Todo list body -->
+            <div class="todo-body">
+              <!-- Task 1 -->
+              <div class="tasks">
+                <div class="task">
+                  <input type="checkbox" id="task-1" />
+                  <label for="task-1">
+                    <span class="custom-checkbox"></span>
+                    One thing todo
+                  </label>
+                </div>
+              </div>
+              <!-- Task 2 -->
+              <div class="tasks">
+                <div class="task">
+                  <input type="checkbox" id="task-2" />
+                  <label for="task-2">
+                    <span class="custom-checkbox"></span>
+                    Another thing todo
+                  </label>
+                </div>
+              </div>
+              <!-- Task-3 -->
+              <div class="tasks">
+                <div class="task">
+                  <input type="checkbox" id="task-3" />
+                  <label for="task-3">
+                    <span class="custom-checkbox"></span>
+                    A third thing todo
+                  </label>
+                </div>
+              </div>
+
+              <!-- Add a new task -->
+              <div class="new-task-creator">
+                <form action="">
+                  <input
+                    type="text"
+                    class="new list"
+                    placeholder="new task name"
+                    aria-label="new task name"
+                  />
+                  <button class="btn task" aria-label="create new task">
+                    +
+                  </button>
+                </form>
+              </div>
+              <div class="delete-stuff">
+                <button class="btn delete">Clear completed tasks</button>
+                <button class="btn delete">Delete list</button>
+              </div>
             </div>
           </div>
         </div>
