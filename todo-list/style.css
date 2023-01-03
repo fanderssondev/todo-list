@@ -15,8 +15,8 @@
 
 body {
   margin: 0;
-  font-family: serif;
-  font-weight: 300;
+  font-family: "Roboto Slab", serif;
+  font-weight: 400;
   font-size: 1.5rem;
   background-color: var(--clr-primary);
   color: var(--clr-light);
@@ -24,41 +24,228 @@ body {
 
 .container {
   max-width: 960px;
-  margin-inline: 10vh;
-  /* FIXME: */
-  outline: 1px solid black;
+  margin-inline: auto;
 }
 
 .list-container {
-  /* FIXME: */
-  outline: 1px solid black;
   display: flex;
   justify-content: space-between;
-  padding-inline: 10vw;
+  padding-inline: 5vw;
   height: 80vh;
 }
 
 .title {
   text-align: center;
-  font-size: 4rem;
+  font-weight: 900;
+  font-size: calc(8vw + 2rem);
   letter-spacing: 0.3rem;
-  margin-top: 0;
+  margin-top: 8vh;
+  margin-bottom: 12vh;
+  color: rgba(0, 0, 0, 0.1);
+  transform: scale(1, 2.5);
+}
+
+.task-list-title,
+.list-title {
+  margin: 0;
 }
 
 .list-style {
-  /* FIXME: */
-  outline: 1px solid black;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.all-tasks {
+.list-name {
+  cursor: pointer;
+  transition: opacity 150ms ease-in;
+}
+
+.list-name:hover {
+  opacity: 0.75;
+}
+
+form {
+  display: flex;
+}
+
+.btn {
+  cursor: pointer;
+  background: 0;
+  border: 0;
+  padding: 0;
+  color: inherit;
+}
+
+.btn.list,
+.btn.task {
+  font-size: 2rem;
+  font-weight: 900;
+  margin-right: 0.5rem;
+  transition: opacity 150ms ease-in;
+}
+
+.btn.list:hover,
+.tn.task:hover {
+  opacity: 0.75;
+}
+
+.new {
+  background: transparent;
+  border: 0;
+  color: inherit;
+  border-bottom: 1px solid currentColor;
+  font-size: 0.9rem;
+  padding: 5px;
+  outline: none;
+
+  transition: box-shadow 150ms ease-in;
+  order: 2;
+}
+
+.new:focus {
+  /* border-bottom-width: 3px; */
+  box-shadow: 0px 2px 3px;
+}
+
+.new:focus::placeholder {
+  opacity: 0.3;
+}
+
+/* All tasks -------------------------------- */
+
+.task-list {
+  line-height: 2;
+  margin: 0;
+  font-size: 1.2rem;
 }
 
 .all-tasks li {
-  list-style: none;
+  list-style: circle;
 }
 
+.active-list {
+  font-weight: 700;
+  letter-spacing: 0.75px;
+  text-shadow: -1px 1px 2px #000, 1px 2px 6px #000, 1px -1px 0 #000;
+}
+
+/* Todo list -------------------------------- */
+
 .todo-list {
+  flex: 1;
+  max-width: 60%;
+  height: fit-content;
+  background-color: var(--clr-light);
+  color: var(--clr-dark);
+}
+
+.todo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 2rem 1rem 1rem 1.5rem;
+  background-color: #e4e4e4;
+  opacity: 0.7;
+}
+
+.list-title {
+  margin-right: 1em;
+}
+
+.task-count {
+  font-size: 1rem;
+}
+
+.todo-body {
+  padding: 2rem 1rem 0.5rem 1.5rem;
+  width: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  line-height: 3rem;
+}
+
+[type="checkbox"] {
+  opacity: 0;
+  position: absolute;
+}
+
+.task {
+  position: relative;
+}
+
+.task label {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+}
+
+.task::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  height: 0.1em;
+  background-color: currentColor;
+  opacity: 0.1;
+}
+
+.custom-checkbox {
+  --size: 0.75em;
+  display: inline-block;
+  width: var(--size);
+  height: var(--size);
+  margin-right: var(--size);
+  cursor: pointer;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  transform: scale(1);
+  transition: transform 200ms ease-in-out;
+}
+
+.task:hover .custom-checkbox,
+[type="checkbox"]:focus + label .custom-checkbox {
+  transform: scale(1.2);
+  color: var(--clr-primary);
+}
+
+[type="checkbox"]:checked + label .custom-checkbox {
+  transform: scale(1.2);
+  background-color: var(--clr-primary);
+  border-color: var(--clr-primary);
+  box-shadow: inset 0 0 0 3px var(--clr-light);
+}
+
+[type="checkbox"]:checked + label {
+  color: var(--clr-primary);
+}
+
+.task label::after {
+  content: "";
+  position: absolute;
+  left: 1.2em;
+  right: -0.5em;
+  height: 3px;
+  top: calc(50% - 1.5px);
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 100ms ease-in-out;
+}
+
+[type="checkbox"]:checked + label::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.new-task-creator {
+  margin: 1rem 0 1.5rem 0;
+}
+
+.delete-buttons {
+  display: flex;
+  justify-content: space-between;
 }
