@@ -96,8 +96,10 @@ form {
   transform: scale(1);
 }
 
-.btn.delete:hover {
+.btn.delete:hover,
+.btn.delete:focus {
   opacity: 0.75;
+  color: var(--clr-warning);
 }
 
 .btn.list:hover,
@@ -278,11 +280,21 @@ form {
   .list-container {
     grid-auto-flow: column;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    gap: 7vh;
+    gap: 7dvh;
   }
 
-  .task-list {
-    /* FIXME: Doesn't shrink content to size */
-    flex-basis: fit-content;
+  .title {
+    /* FIXME: Breaks on smaller screen sizes */
+    position: absolute;
+    left: 7vw;
+    top: 1vh;
+    top: 1dvh;
+    font-weight: 900;
+    font-size: calc(7vw + 2rem);
+    letter-spacing: 1.5rem;
+    color: rgba(0, 0, 0, 0.08);
+    transform: scale(1, 4);
   }
 }
