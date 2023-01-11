@@ -159,6 +159,7 @@ form {
   background-color: var(--clr-light);
   color: var(--clr-dark);
   border-radius: var(--border-radius);
+  opacity: 0.7;
 }
 
 .todo-header {
