@@ -27,9 +27,9 @@
             <h2 class="task-list-title">My lists</h2>
             <div class="ul-container">
               <ul class="task-list" data-lists>
-                <li class="list-name active-list">My list 1</li>
+                <!-- <li class="list-name active-list">My list 1</li>
                 <li class="list-name">My list 2</li>
-                <li class="list-name">My list 3</li>
+                <li class="list-name">My list 3</li> -->
               </ul>
             </div>
 
@@ -49,16 +49,16 @@
           <!-- Todo list -------------------------------------------------------------->
 
           <!-- Todo list header -->
-          <div class="todo-list list-style">
+          <div class="todo-list list-style" data-list-display-container>
             <div class="todo-header">
-              <h2 class="list-title">My list 1</h2>
-              <p class="task-count">3 tasks remaining</p>
+              <h2 class="list-title" data-list-title>My list 1</h2>
+              <p class="task-count" data-list-count>3 tasks remaining</p>
             </div>
 
             <!-- Todo list body -->
             <div class="todo-body">
               <!-- Task 1 -->
-              <div class="tasks">
+              <div class="tasks" data-tasks>
                 <div class="task">
                   <input type="checkbox" id="task-1" />
                   <label for="task-1">
@@ -104,7 +104,9 @@
               </div>
               <div class="delete-buttons">
                 <button class="btn delete">Clear completed tasks</button>
-                <button class="btn delete">Delete list</button>
+                <button class="btn delete" data-delete-list-button>
+                  Delete list
+                </button>
               </div>
             </div>
           </div>
