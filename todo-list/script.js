@@ -28,7 +28,6 @@ deleteListButton.addEventListener('click', () => {
   lists = lists.filter(list => list.id !== selectedListId);
   selectedListId = null;
   saveAndRender();
-  console.log('delete');
 });
 
 newListForm.addEventListener('submit', e => {
@@ -72,7 +71,6 @@ function render() {
     listDisplayContainer.style.display = 'none';
   } else {
     listDisplayContainer.style.display = '';
-    console.log(selectedList.name);
     listTitleElement.innerText = selectedList.name;
     renderTaskCount(selectedList);
     clearElements(tasksContainer);
