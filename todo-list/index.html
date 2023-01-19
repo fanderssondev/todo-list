@@ -26,11 +26,7 @@
           <div class="all-tasks list-style">
             <h2 class="task-list-title">My lists</h2>
             <div class="ul-container">
-              <ul class="task-list" data-lists>
-                <!-- <li class="list-name active-list">My list 1</li>
-                <li class="list-name">My list 2</li>
-                <li class="list-name">My list 3</li> -->
-              </ul>
+              <ul class="task-list" data-lists></ul>
             </div>
 
             <!-- Add a new list -->
@@ -57,42 +53,15 @@
 
             <!-- Todo list body -->
             <div class="todo-body">
-              <!-- Task 1 -->
-              <div class="tasks" data-tasks>
-                <div class="task">
-                  <input type="checkbox" id="task-1" />
-                  <label for="task-1">
-                    <span class="custom-checkbox"></span>
-                    One thing todo
-                  </label>
-                </div>
-              </div>
-              <!-- Task 2 -->
-              <div class="tasks">
-                <div class="task">
-                  <input type="checkbox" id="task-2" />
-                  <label for="task-2">
-                    <span class="custom-checkbox"></span>
-                    Another thing todo with a long description
-                  </label>
-                </div>
-              </div>
-              <!-- Task-3 -->
-              <div class="tasks">
-                <div class="task">
-                  <input type="checkbox" id="task-3" />
-                  <label for="task-3">
-                    <span class="custom-checkbox"></span>
-                    A third thing todo
-                  </label>
-                </div>
-              </div>
+              <!-- Task -->
+              <div class="tasks" data-tasks></div>
 
               <!-- Add a new task -->
               <div class="new-task-creator">
-                <form action="">
+                <form action="" data-new-task-form>
                   <input
                     type="text"
+                    data-new-task-input
                     class="new list"
                     placeholder="new task name"
                     aria-label="new task name"
@@ -103,7 +72,9 @@
                 </form>
               </div>
               <div class="delete-buttons">
-                <button class="btn delete">Clear completed tasks</button>
+                <button class="btn delete" data-clear-complete-tasks-button>
+                  Clear completed tasks
+                </button>
                 <button class="btn delete" data-delete-list-button>
                   Delete list
                 </button>
@@ -113,6 +84,16 @@
         </div>
       </div>
     </main>
+
+    <!-- Task template -->
+    <template id="task-template">
+      <div class="task">
+        <input type="checkbox" />
+        <label>
+          <span class="custom-checkbox"></span>
+        </label>
+      </div>
+    </template>
     <script type="module" src="/script.js"></script>
   </body>
 </html>
