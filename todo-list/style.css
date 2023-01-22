@@ -11,10 +11,10 @@
 *::after {
   font-family: inherit;
   box-sizing: border-box;
+  margin: 0;
 }
 
 body {
-  margin: 0;
   font-family: 'Roboto Slab', serif;
   font-weight: 400;
   font-size: 1.5rem;
@@ -174,10 +174,6 @@ form {
   opacity: 0.7;
 }
 
-.list-title {
-  margin-right: 1em;
-}
-
 .task-count {
   display: grid;
   justify-content: end;
@@ -289,14 +285,28 @@ form {
     gap: 7dvh;
   }
 
+  .list-style {
+    align-items: flex-start;
+    padding-inline: 10vw;
+  }
+
+  .list-title {
+    max-width: 100%;
+  }
+
   .title {
     /* FIXME: Breaks on smaller screen sizes */
     position: absolute;
-    left: 7vw;
-    top: 1vh;
-    top: 1dvh;
+    top: 9vh;
+    top: 9dvh;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-inline: 0;
+    width: 100vw;
+    text-align: center;
     font-weight: 900;
-    font-size: calc(7vw + 2rem);
+    font-size: calc(7vw);
     letter-spacing: 1.5rem;
     color: rgba(0, 0, 0, 0.08);
     transform: scale(1, 4);

@@ -89,7 +89,6 @@ function createTask(taskName) {
 
 function createList(listName) {
   const newList = {
-    // id: (lists.length + 1).toString(),
     id: Date.now().toString(),
     name: listName,
     tasks: [],
@@ -118,7 +117,6 @@ function render() {
   } else {
     listDisplayContainer.style.display = '';
     listTitleElement.innerText = selectedList?.name;
-    console.log('Test render');
     renderTaskCount(selectedList);
     clearElements(tasksContainer);
     renderTasks(selectedList);
