@@ -288,6 +288,7 @@ form {
   .list-style {
     align-items: flex-start;
     padding-inline: 10vw;
+    padding: 0;
   }
 
   .list-title {
@@ -295,7 +296,6 @@ form {
   }
 
   .title {
-    /* FIXME: Breaks on smaller screen sizes */
     position: absolute;
     top: 9vh;
     top: 9dvh;
